@@ -52,11 +52,7 @@
 							<span class="h4">+91-9990148731</span>
 						</a>
 					</div>
-					<select data-placeholder="Choose a Language...">
-						<option value="EN">English</option>
-						<option value="AR">Arabic</option>
-						<option value="SQ">Albanian</option>
-					  </select>
+					<div id="google_translate_element"></div>
 				</div>
 				
 			</div>
@@ -763,7 +759,14 @@
     <!-- 
     Essential Scripts
     =====================================-->
-    <script src="plugins/jquery/jquery.js"></script>
+
+	<script type="text/javascript">
+		function googleTranslateElementInit() {
+		new google.translate.TranslateElement({pageLanguage: 'ar'}, 'google_translate_element');
+		}
+	  </script>
+	  
+	  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>     <script src="plugins/jquery/jquery.js"></script>
     <script src="plugins/bootstrap/bootstrap.min.js"></script>
     <script src="plugins/slick-carousel/slick/slick.min.js"></script>
     <script src="plugins/shuffle/shuffle.min.js"></script>
