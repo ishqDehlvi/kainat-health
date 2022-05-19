@@ -72,9 +72,9 @@
 			<div id="google_translate_element"></div>
 			<div class="collapse navbar-collapse" id="navbarmain">
 				<ul class="navbar-nav ml-auto">
-					<!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+					<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="blog-sidebar.html">Knowledge</a></li>
 					<li class="nav-item"><a class="nav-link" href="service.html">Treatments</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html"> Knowledge</a></li>
 
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="Hospitals.html" id="dropdown02" data-toggle="dropdown"
@@ -149,7 +149,7 @@
            <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
             <h2 class="mb-2 title-color">Book an appoinment</h2>
             <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-               <form id="#" class="appoinment-form" method="post" action="#">
+               <form id="#" class="appoinment-form" method="POST" action="http://localhost:3000/contact">
                     <div class="row">
 
                          <div class="col-lg-6">
@@ -172,8 +172,8 @@
                     <div class="form-group-2 mb-4">
                         <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
                     </div>
-					<input type="file" id="upload" />
-                    <a class="btn btn-main btn-round-full" href="confirmation.html">Get a Free Quote<i class="icofont-simple-right ml-2"></i></a>
+					<input type="file" name="image" id="upload" />
+              <!--onclick="mailSend(event)"-->      <a   class="btn btn-main btn-round-full" href="confirmation.html">Get a Free Quote<i class="icofont-simple-right ml-2"></i></a>
                 </form>
             </div>
         </div>
@@ -229,8 +229,6 @@
 					<div class="divider mb-4"></div>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="./index.html">Home</a></li>
-						<li><a href="./about.html">About Us</a></li>
 						<li><a href="#!">Terms & Conditions</a></li>
 						<li><a href="#!">Privacy Policy</a></li>
 						<li><a href="#!">Company Support </a></li>
@@ -314,6 +312,32 @@
     
     <script src="js/script.js"></script>
 
+	<script>
+function mailSend(event){
+    event.preventDefault();
+
+    let name = $("#name").val();
+    let phone = $("#phone").val();
+	let Country=$("#Country").val();
+	let message=$("#message").val();
+	let upload=$("#upload")[0].files[0];
+	
+    console.log("onpage",upload)
+    $.ajax({
+            url: "http://localhost:3000/contact",
+            method: "POST",
+            contentType: "application/json",
+            data: JSON.stringify({ name,phone,Country,message,upload }),
+            success: function (res) {
+                if(res.error){
+                  console.log(res.error)
+                }else{
+                  console.log(res.success); 
+                }
+            }
+        });
+  }
+	</script>
   </body>
   
 <!-- Mirrored from demo.themefisher.com/Kainat Health/appoinment.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:05 GMT -->

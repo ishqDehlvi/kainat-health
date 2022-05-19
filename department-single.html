@@ -70,9 +70,9 @@
 
 			<div class="collapse navbar-collapse" id="navbarmain">
 				<ul class="navbar-nav ml-auto">
-					<!-- <li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li> -->
+					<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+					<li class="nav-item"><a class="nav-link" href="blog-sidebar.html">Knowledge</a></li>
 					<li class="nav-item"><a class="nav-link" href="service.html">Treatments</a></li>
-					<li class="nav-item"><a class="nav-link" href="about.html"> Knowledge</a></li>
 
 <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="Hospitals.html" id="dropdown02" data-toggle="dropdown"
@@ -117,7 +117,7 @@
       <div class="col-md-12">
         <div class="block text-center">
           <span class="text-white">Hospitals Details</span>
-          <h1 class="text-capitalize mb-5 text-lg">Single Hospitals</h1>
+          <h1 id="hospital_title" class="text-capitalize mb-5 text-lg"></h1>
 
           <!-- <ul class="list-inline breadcumb-nav">
             <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
@@ -135,8 +135,8 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12">
-				<div class="Hospitals-img">
-					<img src="images/service/bg-1.jpg" alt="" class="img-fluid">
+				<div id="hospitalImg" class="Hospitals-img">
+					<!-- <img src="images/service/bg-1.jpg" alt="" class="img-fluid"> -->
 				</div>
 			</div>
 		</div>
@@ -146,19 +146,19 @@
 				<div class="Hospitals-content mt-5">
 					<h3 class="text-md">Medecine and Health</h3>
 					<div class="divider my-4"></div>
-					<p class="lead">Age forming covered you entered the examine. Blessing scarcely confined her contempt wondered shy. Dashwoods contented sportsmen at up no convinced cordially affection.</p>
-					<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum recusandae dolor autem laudantium, quaerat vel dignissimos. Magnam sint suscipit omnis eaque unde eos aliquam distinctio, quisquam iste, itaque possimus . Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet alias modi eaque, ratione recusandae cupiditate dolorum repellendus iure eius rerum hic minus ipsa at, corporis nesciunt tempore vero voluptas. Tempore.</p>
+					<p id="upperBody" class="lead"></p>
+					<p id="body">.</p>
 
 
 					<h3 class="mt-5 mb-4">Treatments features</h3>
 					<div class="divider my-4"></div>
-					<ul class="list-unstyled Hospitals-service">
-						<li><i class="icofont-check mr-2"></i>International Drug Database</li>
-						<li><i class="icofont-check mr-2"></i>Stretchers and Stretcher Accessories</li>
+					<ul id="treatment_feature" class="list-unstyled Hospitals-service">
+						<!-- <li><i class="icofont-check mr-2"></i>International Drug Database</li> -->
+						<!-- <li><i class="icofont-check mr-2"></i>Stretchers and Stretcher Accessories</li>
 						<li><i class="icofont-check mr-2"></i>Cushions and Mattresses</li>
 						<li><i class="icofont-check mr-2"></i>Cholesterol and lipid tests</li>
 						<li><i class="icofont-check mr-2"></i>Critical Care Medicine Specialists</li>
-						<li><i class="icofont-check mr-2"></i>Emergency Assistance</li>
+						<li><i class="icofont-check mr-2"></i>Emergency Assistance</li> -->
 					</ul>
 
 					<a href="appoinment.html" class="btn btn-main-2 btn-round-full">Make an Appoinment<i class="icofont-simple-right ml-2  "></i></a>
@@ -240,8 +240,6 @@
 					<div class="divider mb-4"></div>
 
 					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="./index.html">Home</a></li>
-						<li><a href="./about.html">About Us</a></li>
 						<li><a href="#!">Terms & Conditions</a></li>
 						<li><a href="#!">Privacy Policy</a></li>
 						<li><a href="#!">Company Support </a></li>
@@ -324,7 +322,47 @@
     <script src="plugins/google-map/gmap.js"></script>
     
     <script src="js/script.js"></script>
+<script>
+getDepartment();
+	function getDepartment() {
+	let id = sessionStorage.getItem('deparmentId');
+	console.log(id);
+	let $hospital_title=$('#hospital_title');
+	let $hospitalImg = $('#hospitalImg');
+	let $upperBody = $('#upperBody');
+	let $body = $('#body');
+	let $treatment_feature=$('#treatment_feature');
+	
+	$.ajax({
+		type: 'GET',
+		url: "http://localhost:1337/api/hospitals/" + id + "?populate=*",
+		success: function ({data}) {
+		console.log(data);
+		$hospital_title.append(`${data.attributes.title}`);
+		if (data.attributes.image.data.attributes.formats.medium) {
+			$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
+			`);
 
+		} else if (data.attributes.image.data.attributes.formats.small) {
+			$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.small.url}" alt="">  
+			`);
+
+		} else {$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
+			`);}
+
+
+
+			$upperBody.append(`${data.attributes.upperBody}`);
+			$body.append(`${data.attributes.body}`);
+			$.each(data.attributes.treatment, function (i, feature) {
+				$treatment_feature.append(`
+				<li><i class="icofont-check mr-2"></i>${feature.treatment}</li>
+				`)
+			})
+				}
+	})
+}
+</script>
   </body>
   
 <!-- Mirrored from demo.themefisher.com/Kainat Health/Hospitals-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:05 GMT -->
