@@ -1,43 +1,45 @@
-
-
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
 
-  <!-- Basic Page Needs
+	<!-- Basic Page Needs
   ================================================== -->
-  <meta charset="utf-8">
-  <title> Kainat Health &amp; Medical Tourism</title>
+	<meta charset="utf-8">
+	<title> Kainat Health &amp; Medical Tourism</title>
 
-  <!-- Mobile Specific Metas
+	<!-- Mobile Specific Metas
   ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Health Care Medical Html5 Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Kainat Health HTML Template v1.0">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="description" content="Health Care Medical Html5 Template">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+	<meta name="author" content="Themefisher">
+	<meta name="generator" content="Themefisher Kainat Health HTML Template v1.0">
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="../images/favicon.html" />
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="../images/favicon.html" />
 
-  <!-- 
+	<!-- 
   Essential stylesheets
   =====================================-->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/icofont/icofont.min.css">
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
+	<link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="plugins/icofont/icofont.min.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick.css">
+	<link rel="stylesheet" href="plugins/slick-carousel/slick/slick-theme.css">
 
-  <!-- Main Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+	<!-- Main Stylesheet -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Dropzone -->
+	<link href="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone.css" rel="stylesheet" type="text/css" />
+	<script src="https://unpkg.com/dropzone@6.0.0-beta.1/dist/dropzone-min.js"></script>
 
 </head>
 
 <body id="top">
 
-<header>
-	<!-- <div class="header-top-bar">
+	<header>
+		<!-- <div class="header-top-bar">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-lg-6">
@@ -59,286 +61,333 @@
 			</div>
 		</div>
 	</div> -->
-	<nav class="navbar navbar-expand-lg navigation" id="navbar">
-		<div class="container">
-			<a class="navbar-brand" href="index.html">
-				<img src="images/logo.png" alt="" class="img-fluid.block">
-			</a>
+		<nav class="navbar navbar-expand-lg navigation" id="navbar">
+			<div class="container">
+				<a class="navbar-brand" href="index.html">
+					<img src="images/logo.png" alt="" class="img-fluid.block">
+				</a>
 
-			<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
-				aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="icofont-navigation-menu"></span>
-			</button>
-			<div id="google_translate_element"></div>
-			<div class="collapse navbar-collapse" id="navbarmain">
-				<ul class="navbar-nav ml-auto">
-					<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
-					<li class="nav-item"><a class="nav-link" href="blog-sidebar.html">Knowledge</a></li>
-					<li class="nav-item"><a class="nav-link" href="service.html">Treatments</a></li>
+				<button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarmain"
+					aria-controls="navbarmain" aria-expanded="false" aria-label="Toggle navigation">
+					<span class="icofont-navigation-menu"></span>
+				</button>
+				<div id="google_translate_element"></div>
+				<div class="collapse navbar-collapse" id="navbarmain">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item active"><a class="nav-link" href="index.html">Home</a></li>
+						<li class="nav-item"><a class="nav-link" href="blog-sidebar.html">Knowledge</a></li>
+						<li class="nav-item"><a class="nav-link" href="service.html">Treatments</a></li>
 
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="Hospitals.html" id="dropdown02" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">Hospitals <i class="icofont-thin-down"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="dropdown02">
-        <li><a class="dropdown-item" href="department.html">Hospitals</a></li>
-        <!-- <li><a class="dropdown-item" href="Hospitals-single.html">Hospitals Single</a></li> -->
-    </ul>
-</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="Hospitals.html" id="dropdown02"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Hospitals <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown02">
+								<li><a class="dropdown-item" href="department.html">Hospitals</a></li>
+								<!-- <li><a class="dropdown-item" href="Hospitals-single.html">Hospitals Single</a></li> -->
+							</ul>
+						</li>
 
-<li class="nav-item dropdown">
-    <a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03" data-toggle="dropdown"
-        aria-haspopup="true" aria-expanded="false">Doctors <i class="icofont-thin-down"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="dropdown03">
-        <li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
-        <!-- <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li> -->
-        <!-- <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li> -->
-    </ul>
-</li>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="doctor.html" id="dropdown03"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Doctors <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown03">
+								<li><a class="dropdown-item" href="doctor.html">Doctors</a></li>
+								<!-- <li><a class="dropdown-item" href="doctor-single.html">Doctor Single</a></li> -->
+								<!-- <li><a class="dropdown-item" href="appoinment.html">Appoinment</a></li> -->
+							</ul>
+						</li>
 
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="Stories-sidebar.html" id="dropdown05" data-toggle="dropdown"
-							aria-haspopup="true" aria-expanded="false">Stories <i class="icofont-thin-down"></i></a>
-						<ul class="dropdown-menu" aria-labelledby="dropdown05">
-							<li><a class="dropdown-item" href="Stories-sidebar.html">Stories with Sidebar</a></li>
-							<li><a class="dropdown-item" href="Stories-single.html">Stories Single</a></li>
-						</ul>
-					</li>
-					<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
-					<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Free Quote <i class="icofont-simple-right ml-2  "></i></a>
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle" href="Stories-sidebar.html" id="dropdown05"
+								data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Stories <i
+									class="icofont-thin-down"></i></a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown05">
+								<li><a class="dropdown-item" href="Stories-sidebar.html">Stories with Sidebar</a></li>
+								<li><a class="dropdown-item" href="Stories-single.html">Stories Single</a></li>
+							</ul>
+						</li>
+						<li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+						<a href="appoinment.html" target="_blank" class="btn btn-main-2 btn-icon btn-round-full">Free
+							Quote <i class="icofont-simple-right ml-2  "></i></a>
 
-				</ul>
+					</ul>
+				</div>
 			</div>
-		</div>
-	</nav>
-</header>
+		</nav>
+	</header>
 
-<section class="page-title bg-1">
-  <div class="overlay"></div>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-12">
-        <div class="block text-center">
-          <span class="text-white">Book your Seat</span>
-          <h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
+	<section class="page-title bg-1">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<div class="block text-center">
+						<span class="text-white">Book your Seat</span>
+						<h1 class="text-capitalize mb-5 text-lg">Appoinment</h1>
 
-          <!-- <ul class="list-inline breadcumb-nav">
+						<!-- <ul class="list-inline breadcumb-nav">
             <li class="list-inline-item"><a href="index.html" class="text-white">Home</a></li>
             <li class="list-inline-item"><span class="text-white">/</span></li>
             <li class="list-inline-item"><a href="#" class="text-white-50">Book your Seat</a></li>
           </ul> -->
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="appoinment section">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-4">
-          <div class="mt-3">
-            <div class="feature-icon mb-3">
-              <i class="icofont-support text-lg"></i>
-            </div>
-             <span class="h3">Call for an Emergency Service!</span>
-              <h2 class="text-color mt-3">+91-9990148731 </h2>
-          </div>
-      </div>
-
-      <div class="col-lg-8">
-           <div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
-            <h2 class="mb-2 title-color">Book an appoinment</h2>
-            <p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui velit . Iste dolorum atque similique praesentium soluta.</p>
-               <form id="#" class="appoinment-form" method="POST" action="http://localhost:3000/contact">
-                    <div class="row">
-
-                         <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="name" id="name" type="text" class="form-control" placeholder="Full Name">
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="form-group">
-                                <input name="phone" id="phone" type="Number" class="form-control" placeholder="Phone Number">
-                            </div>
-                        </div>
-                    </div>
-					<div class="col-lg-6">
-						<div class="form-group">
-							<input name="name" id="Country" type="text" class="form-control" placeholder="Country">
-						</div>
-					</div>
-                    <div class="form-group-2 mb-4">
-                        <textarea name="message" id="message" class="form-control" rows="6" placeholder="Your Message"></textarea>
-                    </div>
-					<input type="file" name="image" id="upload" />
-              <!--onclick="mailSend(event)"-->      <a   class="btn btn-main btn-round-full" href="confirmation.html">Get a Free Quote<i class="icofont-simple-right ml-2"></i></a>
-                </form>
-            </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<!-- footer Start -->
-<footer class="footer section gray-bg">
-	<div class="container">
-		<div class="row">
-			<div class="col-lg-4 mr-auto col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<div class="logo mb-4">
-						<img src="images/logo.png" alt="" class="img-fluid.block">
-					</div>
-					<p>Kainat is a registered healthcare company that connect you to the top medical experts and hospitals. It has professional team that make right healthcare choice for you.</p>
-
-					<ul class="list-inline footer-socials mt-4">
-						<li class="list-inline-item">
-							<a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a>
-						</li>
-						<li class="list-inline-item">
-							<a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a>
-						</li>
-						<li class="list-inline-item">
-							<a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="col-lg-2 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-3">Hospitals</h4>
-					<div class="divider mb-4"></div>
-
-					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#!">Surgery </a></li>
-						<li><a href="#!">Wome's Health</a></li>
-						<li><a href="#!">Radiology</a></li>
-						<li><a href="#!">Cardioc</a></li>
-						<li><a href="#!">Medicine</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="col-lg-2 col-md-6 col-sm-6">
-				<div class="widget mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-3">Support</h4>
-					<div class="divider mb-4"></div>
-
-					<ul class="list-unstyled footer-menu lh-35">
-						<li><a href="#!">Terms & Conditions</a></li>
-						<li><a href="#!">Privacy Policy</a></li>
-						<li><a href="#!">Company Support </a></li>
-						<li><a href="#!">FAQuestions</a></li>
-						<li><a href="#!">Company Licence</a></li>
-					</ul>
-				</div>
-			</div>
-
-			<div class="col-lg-3 col-md-6 col-sm-6">
-				<div class="widget widget-contact mb-5 mb-lg-0">
-					<h4 class="text-capitalize mb-3">Get in Touch</h4>
-					<div class="divider mb-4"></div>
-
-					<div class="footer-contact-block mb-4">
-						<div class="icon d-flex align-items-center">
-							<i class="icofont-email mr-3"></i>
-							<span class="h6 mb-0">Support Available for 24/7</span>
-						</div>
-						<h4 class="mt-2"><a href="mailto:kainathealth@email.com">kainathealth@email.com</a></h4>
-					</div>
-
-					<div class="footer-contact-block">
-						<div class="icon d-flex align-items-center">
-							<i class="icofont-support mr-3"></i>
-							<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
-						</div>
-						<h4 class="mt-2"><a href="tel:+23-345-67890">+91-9990148731</a></h4>
 					</div>
 				</div>
 			</div>
 		</div>
+	</section>
 
-		<div class="footer-btm py-4 mt-5">
-			<div class="row align-items-center justify-content-between">
-				<div class="col-lg-6">
-					<div class="copyright">
-						Copyright &copy; 2021, Designed &amp; Developed by <a href="https://kainathealth.com/">kainathealth</a>
-					</div>
-				</div>
-				<div class="col-lg-6">
-					<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
-						<form action="#" class="subscribe">
-							<input type="text" class="form-control" placeholder="Your Email address" required>
-							<button type="submit" class="btn btn-main-2 btn-round-full">Subscribe</button>
-						</form>
-					</div>
-				</div>
-			</div>
-
+	<section class="appoinment section">
+		<div class="container">
 			<div class="row">
 				<div class="col-lg-4">
-					<a class="backtop scroll-top-to" href="#top">
-						<i class="icofont-long-arrow-up"></i>
-					</a>
+					<div class="mt-3">
+						<div class="feature-icon mb-3">
+							<i class="icofont-support text-lg"></i>
+						</div>
+						<span class="h3">Call for an Emergency Service!</span>
+						<h2 class="text-color mt-3">+91-9990148731 </h2>
+					</div>
+				</div>
+
+				<div class="col-lg-8">
+					<div class="appoinment-wrap mt-5 mt-lg-0 pl-lg-5">
+						<h2 class="mb-2 title-color">Book an appoinment</h2>
+						<p class="mb-4">Mollitia dicta commodi est recusandae iste, natus eum asperiores corrupti qui
+							velit . Iste dolorum atque similique praesentium soluta.</p>
+						<form id="formdata" class="appoinment-form" method="POST" enctype="multipart/form-data"
+							action="#">
+							<div class="row">
+
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input name="name" id="name" type="text" class="form-control"
+											placeholder="Full Name">
+									</div>
+								</div>
+
+								<div class="col-lg-6">
+									<div class="form-group">
+										<input name="phone" id="phone" type="Number" class="form-control"
+											placeholder="Phone Number">
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-6">
+								<div class="form-group">
+									<input name="country" id="Country" type="text" class="form-control"
+										placeholder="Country">
+								</div>
+							</div>
+							<div class="form-group-2 mb-4">
+								<textarea name="message" id="message" class="form-control" rows="6"
+									placeholder="Your Message"></textarea>
+							</div>
+							<!-- <input type="file"  name="image" id="upload" /> -->
+							<!--onclick="mailSend(event) href="confirmation.html""-->
+							<!--   <a onclick="mailSend(event)"  class="btn btn-main btn-round-full" >Get a Free Quote<i class="icofont-simple-right ml-2"></i></a>-->
+							<!-- <input type="submit" value="Send"  /> -->
+						</form>
+						<form action="#" class="dropzone" method="POST" id="my-awesome-dropzone">
+							<button onclick="mailSend(event)" class="btn btn-main btn-round-full" type="submit">Get a Free
+								Quote<i class="icofont-simple-right ml-2"></i></button>
+						</form>
+
+					</div>
 				</div>
 			</div>
 		</div>
-	</div>
-</footer>
-   
+		</div>
+	</section>
 
-    <!-- 
+
+	<!-- footer Start -->
+	<footer class="footer section gray-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 mr-auto col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<div class="logo mb-4">
+							<img src="images/logo.png" alt="" class="img-fluid.block">
+						</div>
+						<p>Kainat is a registered healthcare company that connect you to the top medical experts and
+							hospitals. It has professional team that make right healthcare choice for you.</p>
+
+						<ul class="list-inline footer-socials mt-4">
+							<li class="list-inline-item">
+								<a href="https://www.facebook.com/themefisher"><i class="icofont-facebook"></i></a>
+							</li>
+							<li class="list-inline-item">
+								<a href="https://twitter.com/themefisher"><i class="icofont-twitter"></i></a>
+							</li>
+							<li class="list-inline-item">
+								<a href="https://www.pinterest.com/themefisher/"><i class="icofont-linkedin"></i></a>
+							</li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Hospitals</h4>
+						<div class="divider mb-4"></div>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#!">Surgery </a></li>
+							<li><a href="#!">Wome's Health</a></li>
+							<li><a href="#!">Radiology</a></li>
+							<li><a href="#!">Cardioc</a></li>
+							<li><a href="#!">Medicine</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-2 col-md-6 col-sm-6">
+					<div class="widget mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Support</h4>
+						<div class="divider mb-4"></div>
+
+						<ul class="list-unstyled footer-menu lh-35">
+							<li><a href="#!">Terms & Conditions</a></li>
+							<li><a href="#!">Privacy Policy</a></li>
+							<li><a href="#!">Company Support </a></li>
+							<li><a href="#!">FAQuestions</a></li>
+							<li><a href="#!">Company Licence</a></li>
+						</ul>
+					</div>
+				</div>
+
+				<div class="col-lg-3 col-md-6 col-sm-6">
+					<div class="widget widget-contact mb-5 mb-lg-0">
+						<h4 class="text-capitalize mb-3">Get in Touch</h4>
+						<div class="divider mb-4"></div>
+
+						<div class="footer-contact-block mb-4">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-email mr-3"></i>
+								<span class="h6 mb-0">Support Available for 24/7</span>
+							</div>
+							<h4 class="mt-2"><a href="mailto:kainathealth@email.com">kainathealth@email.com</a></h4>
+						</div>
+
+						<div class="footer-contact-block">
+							<div class="icon d-flex align-items-center">
+								<i class="icofont-support mr-3"></i>
+								<span class="h6 mb-0">Mon to Fri : 08:30 - 18:00</span>
+							</div>
+							<h4 class="mt-2"><a href="tel:+23-345-67890">+91-9990148731</a></h4>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<div class="footer-btm py-4 mt-5">
+				<div class="row align-items-center justify-content-between">
+					<div class="col-lg-6">
+						<div class="copyright">
+							Copyright &copy; 2021, Designed &amp; Developed by <a
+								href="https://kainathealth.com/">kainathealth</a>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="subscribe-form text-lg-right mt-5 mt-lg-0">
+							<form action="#" class="subscribe">
+								<input type="text" class="form-control" placeholder="Your Email address" required>
+								<button type="submit" class="btn btn-main-2 btn-round-full">Subscribe</button>
+							</form>
+						</div>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-lg-4">
+						<a class="backtop scroll-top-to" href="#top">
+							<i class="icofont-long-arrow-up"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+
+	<!-- 
     Essential Scripts
     =====================================-->
+	<script>
+		Dropzone.discover();
+	</script>
 	<script type="text/javascript">
 		function googleTranslateElementInit() {
-		new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+			new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
 		}
-	  </script>
-	  
-	  <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>     <script src="plugins/jquery/jquery.js"></script>
-    <script src="plugins/jquery/jquery.js"></script>
-    <script src="plugins/bootstrap/bootstrap.min.js"></script>
-    <script src="plugins/slick-carousel/slick/slick.min.js"></script>
-    <script src="plugins/shuffle/shuffle.min.js"></script>
+	</script>
 
-    <!-- Google Map -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
-    <script src="plugins/google-map/gmap.js"></script>
-    
-    <script src="js/script.js"></script>
+	<script type="text/javascript"
+		src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/jquery/jquery.js"></script>
+	<script src="plugins/bootstrap/bootstrap.min.js"></script>
+	<script src="plugins/slick-carousel/slick/slick.min.js"></script>
+	<script src="plugins/shuffle/shuffle.min.js"></script>
+
+	<!-- Google Map -->
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAkeLMlsiwzp6b3Gnaxd86lvakimwGA6UA"></script>
+	<script src="plugins/google-map/gmap.js"></script>
+
+	<script src="js/script.js"></script>
+
+
 
 	<script>
-function mailSend(event){
-    event.preventDefault();
+		function mailSend(event) {
+			event.preventDefault();
+			var formData = new FormData();
 
-    let name = $("#name").val();
-    let phone = $("#phone").val();
-	let Country=$("#Country").val();
-	let message=$("#message").val();
-	let upload=$("#upload")[0].files[0];
-	
-    console.log("onpage",upload)
-    $.ajax({
-            url: "http://localhost:3000/contact",
-            method: "POST",
-            contentType: "application/json",
-            data: JSON.stringify({ name,phone,Country,message,upload }),
-            success: function (res) {
-                if(res.error){
-                  console.log(res.error)
-                }else{
-                  console.log(res.success); 
-                }
-            }
-        });
-  }
+			console.log(formData)
+
+			let name = $("#name").val();
+			let phone = $("#phone").val();
+			let country = $("#Country").val();
+			let message = $("#message").val();
+			// let upload = $("#upload").val();
+			const attachment = $('#my-awesome-dropzone').get(0).dropzone;
+			// const file=attachment.files[0]
+			for (let i = 0; i < attachment.files.length; i++) {
+				formData.append('files', attachment.files[i]);
+			}
+			const emailobject = {
+				name: name,
+				phone: phone,
+				country: country,
+				message: message,
+			}
+			formData.append('emailobject', JSON.stringify(emailobject));
+			console.log("onpage", formData);
+			console.log(formData.get("emailobject"));
+
+			$.ajax({
+				url: "http://localhost:3000/contact",
+				method: "POST",
+				contentType: "application/json",
+				data: JSON.stringify({ formData }),
+				success: function (res) {
+					if (res.error) {
+						console.log(res.error)
+					} else {
+						console.log(res.success);
+					}
+				}
+			});
+		}
+
 	</script>
-  </body>
-  
+
+	<!-- // dropzone -->
+
+</body>
+
 <!-- Mirrored from demo.themefisher.com/Kainat Health/appoinment.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:05 GMT -->
+
 </html>

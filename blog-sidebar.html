@@ -135,8 +135,8 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8">
-        <div class="row">
-	<div class="col-lg-12 col-md-12 mb-5">
+        <div id="blogs" class="row">
+	<!-- <div class="col-lg-12 col-md-12 mb-5">
 		<div class="Stories-item">
 			<div class="Stories-thumb">
 				<img src="images/Stories/Stories-1.jpg" alt="" class="img-fluid ">
@@ -155,8 +155,8 @@
 				<a href="blog-single.html" target="_blank" class="btn btn-main btn-icon btn-round-full">Read More <i class="icofont-simple-right ml-2  "></i></a>
 			</div>
 		</div>
-	</div>
-
+	</div> -->
+<!-- 
 	<div class="col-lg-12 col-md-12 mb-5">
 		<div class="Stories-item">
 			<div class="Stories-thumb">
@@ -176,10 +176,10 @@
 				<a href="Stories-single.html" target="_blank" class="btn btn-main btn-icon btn-round-full">Read More <i class="icofont-simple-right ml-2  "></i></a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
-	<div class="col-lg-12 col-md-12 mb-5">
+	<!-- <div class="col-lg-12 col-md-12 mb-5">
 		<div class="Stories-item">
 			<div class="Stories-thumb">
 				<img src="images/Stories/Stories-4.jpg" alt="" class="img-fluid">
@@ -197,7 +197,7 @@
 				<a href="blog-single.html" target="_blank" class="btn btn-main btn-icon btn-round-full">Read More <i class="icofont-simple-right ml-2  "></i></a>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 	<div class="col-lg-12 col-md-12">
 		<nav class="pagination py-2 d-inline-block">
@@ -341,6 +341,59 @@
     <script src="js/script.js"></script>
 
   </body>
+  <script>
+	function blogId(id) {
+		sessionStorage.setItem('blogId', id);
+		window.location = 'blog-single.html';
+		return false;
+	}
+	blogs();
+	function blogs() {
+		const $blogs = $('#blogs')
+		$.ajax({
+			url: "http://kainat-health.herokuapp.com/api/knowladges?fields=title,lowerBody,date&populate=image",
+			method: "GET",
+			success: function (res) {
+				$.each(res.data, function (i, blog) {
+					console.log("blog", blog);
+					let image;
+					if(blog.attributes.image.data.attributes.formats.medium){
+						image=blog.attributes.image.data.attributes.formats.medium.url;
+					}else if(blog.attributes.image.data.attributes.formats.small){
+						image=blog.attributes.image.data.attributes.formats.small.url;
+					}else{
+						image=blog.attributes.image.data.attributes.formats.thumbnail.url;
+					}
+					
+					$blogs.append(`
+					<div class="col-lg-12 col-md-12 mb-5">
+		<div class="Stories-item">
+			<div class="Stories-thumb">
+				<img src="http://kainat-health.herokuapp.com${image}" alt="" class="img-fluid ">
+			</div>
+
+			<div class="Stories-item-content">
+				<div class="Stories-item-meta mb-3 mt-4">
+					<span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>5 Comments</span>
+					<span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-1"></i>${blog.attributes.date}</span>
+				</div> 
+
+				<h2 class="mt-3 mb-3"><a onclick="blogId(${blog.id})" href="blog-single.html">${blog.attributes.title}</a></h2>
+
+				<p class="mb-4">${blog.attributes.lowerBody}</p>
+
+				<a onclick="blogId(${blog.id})" href="blog-single.html" target="_blank" class="btn btn-main btn-icon btn-round-full">Read More <i class="icofont-simple-right ml-2  "></i></a>
+			</div>
+		</div>
+	</div>
+					`)
+
+				})
+
+			}
+		});
+	}
+</script>
   
 <!-- Mirrored from demo.themefisher.com/Kainat Health/Stories-sidebar.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:07 GMT -->
 </html>

@@ -335,19 +335,19 @@ getDepartment();
 	
 	$.ajax({
 		type: 'GET',
-		url: "http://localhost:1337/api/hospitals/" + id + "?populate=*",
+		url: "http://kainat-health.herokuapp.com/api/hospitals/" + id + "?populate=*",
 		success: function ({data}) {
 		console.log(data);
 		$hospital_title.append(`${data.attributes.title}`);
 		if (data.attributes.image.data.attributes.formats.medium) {
-			$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
+			$hospitalImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
 			`);
 
 		} else if (data.attributes.image.data.attributes.formats.small) {
-			$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.small.url}" alt="">  
+			$hospitalImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.small.url}" alt="">  
 			`);
 
-		} else {$hospitalImg.append(`<img class="img-fluid" src="http://localhost:1337${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
+		} else {$hospitalImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
 			`);}
 
 
@@ -365,5 +365,4 @@ getDepartment();
 </script>
   </body>
   
-<!-- Mirrored from demo.themefisher.com/Kainat Health/Hospitals-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:05 GMT -->
-</html>
+  </html>

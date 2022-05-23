@@ -137,38 +137,40 @@
         <div class="row">
 	<div class="col-lg-12 mb-5">
 		<div class="single-Stories-item">
-			<img src="images/Stories/Stories-1.jpg" alt="" class="img-fluid">
+			<span id="blogsImg">
+				<!-- <img src="images/Stories/Stories-1.jpg" alt="" class="img-fluid"> -->
+
+			</span>
 
 			<div class="Stories-item-content mt-5">
 				<div class="Stories-item-meta mb-3">
 					<span class="text-color-2 text-capitalize mr-3"><i class="icofont-book-mark mr-2"></i> Equipment</span>
 					<span class="text-muted text-capitalize mr-3"><i class="icofont-comment mr-2"></i>5 Comments</span>
-					<span class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-2"></i> 28th January 2019</span>
+					<span id="date" class="text-black text-capitalize mr-3"><i class="icofont-calendar mr-2"></i>
+						 <!-- 28th January 2019 -->
+						</span>
 				</div>
 
-				<h2 class="mb-4 text-md"><a href="Stories-single.html">Healthy environment to care with modern equipment</a></h2>
+				<h2 id="title" class="mb-4 text-md"></h2>
 
-				<p class="lead mb-4">Non illo quas blanditiis repellendus laboriosam minima animi. Consectetur accusantium
-					pariatur repudiandae!</p>
+				<p id="upperBody" class="lead mb-4">
+					<!-- Non illo quas blanditiis repellendus laboriosam minima animi. Consectetur accusantium
+					pariatur repudiandae! -->
+				</p>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Possimus natus, consectetur? Illum libero vel nihil
-					nisi quae, voluptatem, sapiente necessitatibus distinctio voluptates, iusto qui. Laboriosam autem, nam
-					voluptate in beatae. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae iure officia nihil nemo,
-					repudiandae itaque similique praesentium non aut nesciunt facere nulla, sequi sunt nam temporibus atque earum,
-					ratione, labore.</p>
+			
 
-				<blockquote class="quote">
-					A brand for a company is like a reputation for a person. You earn reputation by trying to do hard things well.
+				<blockquote id="middleBody" class="quote">
+					<!-- A brand for a company is like a reputation for a person. You earn reputation by trying to do hard things well. -->
 				</blockquote>
 
 
-				<p class="lead mb-4 font-weight-normal text-black">The same is true as we experience the emotional sensation of
-					stress from our first instances of social rejection ridicule. We quickly learn to fear and thus automatically.
+				<p id="lowerBody" class="lead mb-4 font-weight-normal text-black">
+					<!-- The same is true as we experience the emotional sensation of
+					stress from our first instances of social rejection ridicule. We quickly learn to fear and thus automatically. -->
 				</p>
 
-				<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Iste, rerum beatae repellat tenetur incidunt
-					quisquam libero dolores laudantium. Nesciunt quis itaque quidem, voluptatem autem eos animi laborum iusto
-					expedita sapiente.</p>
+				
 
 				<div class="mt-5 clearfix">
 					<ul class="float-left list-inline tag-option">
@@ -331,6 +333,52 @@
     <script src="js/script.js"></script>
 
   </body>
-  
+
+  <script>
+	  
+	  	getStorie();
+	function getStorie() {
+	
+	let id = sessionStorage.getItem('blogId');
+	console.log(id);
+	let $blogsImg=$('#blogsImg');
+	let $title=$('#title');
+	let $upperBody=$('#upperBody');
+	let $middleBody=$('#middleBody');
+	let $lowerBody=$('#lowerBody');
+	let $date=$('#date');
+
+	
+	$.ajax({
+		type: 'GET',
+		url: "http://kainat-health.herokuapp.com/api/knowladges/" + id + "?populate=*",
+		success: function ({data}) {
+		console.log(data);
+
+		if (data.attributes.image.data.attributes.formats.medium) {
+			$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
+			`);
+
+		} else if (data.attributes.image.data.attributes.formats.small) {
+			$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.small.url}" alt="">  
+			`);
+
+		} else {$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
+			`);}
+
+
+
+			$title.append(`${data.attributes.title}`);
+			$upperBody.append(`${data.attributes.upperBody}`);
+			$lowerBody.append(`${data.attributes.lowerBody}`);
+			$middleBody.append(`${data.attributes.middleBody}`);
+			$date.append(`${data.attributes.date}`);
+
+				}
+	
+			})
+}
+	
+  </script>
 <!-- Mirrored from demo.themefisher.com/Kainat Health/Stories-single.html by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 30 Mar 2022 14:22:08 GMT -->
 </html>

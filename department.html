@@ -159,8 +159,8 @@
 					</div>
 				</div>
 			</div> -->
-			<!-- data comming from strapi-->
-			
+				<!-- data comming from strapi-->
+
 			</div>
 		</div>
 	</section>
@@ -300,27 +300,35 @@
 
 	<script>
 
-function deparmentId(id) {
-	sessionStorage.setItem('deparmentId', id);
-	window.location = 'department-single.html';
-	return false;
-}
+		function deparmentId(id) {
+			sessionStorage.setItem('deparmentId', id);
+			window.location = 'department-single.html';
+			return false;
+		}
 
 		hospitals();
 		function hospitals() {
-			const $hospital_strapi= $('#hospital-strapi')
-			
+			const $hospital_strapi = $('#hospital-strapi')
+
 
 			$.ajax({
-				url: "http://localhost:1337/api/hospitals?fields=title,body&populate=image",
+				url: "http://kainat-health.herokuapp.com/api/hospitals?fields=title,body&populate=image",
 				method: "GET",
 				success: function (res) {
 					$.each(res.data, function (i, hospital) {
-console.log("hospital",hospital)
+						console.log("hospital", hospital);
+						let image;
+						if (hospital.attributes.image.data.attributes.formats.medium) {
+							image = hospital.attributes.image.data.attributes.formats.medium.url;
+						} else if (hospital.attributes.image.data.attributes.formats.small) {
+							image = hospital.attributes.image.data.attributes.formats.small.url;
+						} else {
+							image = hospital.attributes.image.data.attributes.formats.thumbnail.url;
+						}
 						$hospital_strapi.append(`
 						<div class="col-lg-4 col-md-6 ">
 				<div class="Hospitals-block mb-5">
-					<img src="http://localhost:1337${hospital.attributes.image.data.attributes.formats.thumbnail.url}" alt="" class="img-fluid w-100">
+					<img src="http://kainat-health.herokuapp.com${image}" alt="" class="img-fluid w-100">
 					<div class="content">
 						<h4 class="mt-4 mb-2 title-color">${hospital.attributes.title}</h4>
 						<p class="mb-4">${hospital.attributes.body}.</p>
