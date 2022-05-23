@@ -312,7 +312,7 @@
 
 
 			$.ajax({
-				url: "http://kainat-health.herokuapp.com/api/hospitals?fields=title,body&populate=image",
+				url: "https://kainat-health.herokuapp.com/api/hospitals?fields=title,body&populate=image",
 				method: "GET",
 				success: function (res) {
 					$.each(res.data, function (i, hospital) {
@@ -328,7 +328,7 @@
 						$hospital_strapi.append(`
 						<div class="col-lg-4 col-md-6 ">
 				<div class="Hospitals-block mb-5">
-					<img src="http://kainat-health.herokuapp.com${image}" alt="" class="img-fluid w-100">
+					<img src="https://kainat-health.herokuapp.com${image}" alt="" class="img-fluid w-100">
 					<div class="content">
 						<h4 class="mt-4 mb-2 title-color">${hospital.attributes.title}</h4>
 						<p class="mb-4">${hospital.attributes.body}.</p>

@@ -355,7 +355,7 @@
 		function stories() {
 			const $stories = $('#stories')
 			$.ajax({
-				url: "http://kainat-health.herokuapp.com/api/stories?fields=title,lowerBody,date&populate=image",
+				url: "https://kainat-health.herokuapp.com/api/stories?fields=title,lowerBody,date&populate=image",
 				method: "GET",
 				success: function (res) {
 					$.each(res.data, function (i, storie) {
@@ -372,7 +372,7 @@
 						$stories.append(`<div class="col-lg-12 col-md-12 mb-5">
 		<div class="Stories-item">
 			<div class="Stories-thumb">
-				<img src="http://kainat-health.herokuapp.com${image}" alt="" class="img-fluid ">
+				<img src="https://kainat-health.herokuapp.com${image}" alt="" class="img-fluid ">
 			</div>
 
 			<div class="Stories-item-content">

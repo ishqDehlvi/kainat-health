@@ -429,12 +429,12 @@
 			
 			$.ajax({
 				type: 'GET',
-				url: "http://kainat-health.herokuapp.com/api/doctors/" + id + "?populate=*",
+				url: "https://kainat-health.herokuapp.com/api/doctors/" + id + "?populate=*",
 				success: function ({data}) {
 				console.log(data);
 				$doctorName.append(`${data.attributes.name}`)
 				$specialist.append(`${data.attributes.specialist}`)
-					$doctorImg.append(`<img class="img-fluid w-100" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
+					$doctorImg.append(`<img class="img-fluid w-100" src="https://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
 					`);
 					$about.append(`${data.attributes.about}`);
 					$skills.append(`${data.attributes.skills}`);

@@ -351,19 +351,19 @@
 	
 	$.ajax({
 		type: 'GET',
-		url: "http://kainat-health.herokuapp.com/api/knowladges/" + id + "?populate=*",
+		url: "https://kainat-health.herokuapp.com/api/knowladges/" + id + "?populate=*",
 		success: function ({data}) {
 		console.log(data);
 
 		if (data.attributes.image.data.attributes.formats.medium) {
-			$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
+			$blogsImg.append(`<img class="img-fluid" src="https://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.medium.url}" alt="">  
 			`);
 
 		} else if (data.attributes.image.data.attributes.formats.small) {
-			$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.small.url}" alt="">  
+			$blogsImg.append(`<img class="img-fluid" src="https://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.small.url}" alt="">  
 			`);
 
-		} else {$blogsImg.append(`<img class="img-fluid" src="http://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
+		} else {$blogsImg.append(`<img class="img-fluid" src="https://kainat-health.herokuapp.com${data.attributes.image.data.attributes.formats.thumbnail.url}" alt="">  
 			`);}
 
 

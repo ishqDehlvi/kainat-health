@@ -456,7 +456,7 @@
 		function doctors() {
 			let $doctor_strapi = $('#doctor-strapi')
 			$.ajax({
-				url: "http://kainat-health.herokuapp.com/api/doctors?fields=name,specialist&populate=image",
+				url: "https://kainat-health.herokuapp.com/api/doctors?fields=name,specialist&populate=image",
 				method: "GET",
 				success: function (res) {
 					$.each(res.data, function (i, doctor) {
@@ -473,7 +473,7 @@
 	      	<div class="position-relative doctor-inner-box">
 		        <div class="doctor-profile">
 	               <div class="doctor-img">
-	               		<img src="http://kainat-health.herokuapp.com${image}" alt="doctor-image" class="img-fluid w-100">
+	               		<img src="https://kainat-health.herokuapp.com${image}" alt="doctor-image" class="img-fluid w-100">
 	               </div>
 	            </div>
                 <div class="content mt-3">
