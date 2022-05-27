@@ -176,4 +176,22 @@
 
 
 
+					<div class="info-block mt-4">
+						<h4  class="mb-0 doctorName"> 
+							<!--name-->
+						</h4>
+						<p id="specialist">
+						<!--specialist-->
+						</p>
+
+						<ul class="list-inline mt-4 doctor-social-links">
+							<li class="list-inline-item"><a href="#!"><i class="icofont-facebook"></i></a></li>
+							<li class="list-inline-item"><a href="#!"><i class="icofont-twitter"></i></a></li>
+							<li class="list-inline-item"><a href="#!"><i class="icofont-skype"></i></a></li>
+							<li class="list-inline-item"><a href="#!"><i class="icofont-linkedin"></i></a></li>
+							<li class="list-inline-item"><a href="#!"><i class="icofont-pinterest"></i></a></li>
+						</ul>
+					</div>
+
+
 
